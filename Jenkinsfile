@@ -11,7 +11,7 @@ pipeline {
             image 'jetbrains/qodana-jvm-community'
         }
    }
-//    stages {
+   stages {
 //         stage('Qodana') {
 //             steps {
 //                 sh '''
@@ -20,5 +20,5 @@ pipeline {
 //                 '''
 //             }
 //         }
-//    }
+   }
 }
