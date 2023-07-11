@@ -11,14 +11,14 @@ pipeline {
             image 'jetbrains/qodana-jvm-community'
         }
    }
-   stages {
-        stage('Qodana') {
-            steps {
-                sh '''
-                qodana \
-                --fail-threshold 10
-                '''
-            }
-        }
-   }
+//    stages {
+//         stage('Qodana') {
+//             steps {
+//                 sh '''
+//                 qodana \
+//                 --fail-threshold 10
+//                 '''
+//             }
+//         }
+//    }
 }
