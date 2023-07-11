@@ -13,12 +13,12 @@ pipeline {
    }
    stages {
         stage('Qodana') {
-//             steps {
+            steps {
 //                 sh '''
 //                 qodana \
 //                 --fail-threshold 10
 //                 '''
-//             }
+            }
         }
    }
 }
