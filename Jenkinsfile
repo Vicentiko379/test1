@@ -4,7 +4,10 @@ pipeline {
 //     }
     agent {
         docker {
-            args " --entrypoint='' -v $HOME/.m2/:/root/.m2/  -v ${env.WORKSPACE}/qodana-reports:/data/results/ -v ${env.WORKSPACE}:/data/project/"
+            args '''
+                -v "${WORKSPACE}":/data/project
+                --entrypoint=""
+                '''
             image 'jetbrains/qodana-jvm-community'
         }
    }
