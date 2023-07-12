@@ -5,7 +5,9 @@ pipeline {
     agent {
         docker {
             args '''
-                -v "${WORKSPACE}":/data/project
+                -v "-v $HOME/.m2/:/root/.m2/ 
+                -v ${env.WORKSPACE}/qodana-reports:/data/results/ 
+                -v ${env.WORKSPACE}:/data/project/
                 --entrypoint=""
                 '''
             image 'jetbrains/qodana-jvm-community'
