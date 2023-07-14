@@ -2,7 +2,7 @@ pipeline {
    agent {
       docker {
           image "jetbrains/qodana-jvm-community"
-          args ' --entrypoint="" -v "c:/pepito/qodana-reports:/data/results/ -v "c:/pepito":/data/project/'
+          args ' --entrypoint="" -v "C:/ECS/Code/qodana-docker"/qodana-reports:/data/results/ -v "C:/ECS/Code/qodana-docker":/data/project/'
       }
    }
    stages {
