@@ -4,7 +4,7 @@ pipeline {
 //     }
     agent {
         docker {
-            args '-v /ProgramData/Jenkins/.jenkins/workspace/pipeline docker/:/data/project'
+            args '-v "${WORKSPACE}":/data/project'
             image 'jetbrains/qodana-jvm-community'
         }
    }
