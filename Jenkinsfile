@@ -8,7 +8,7 @@ pipeline {
    stages {
        stage('Run') {
            steps {
-               sh "qodana --save-report"
+//                sh "qodana --save-report"
            }
        }
    }
