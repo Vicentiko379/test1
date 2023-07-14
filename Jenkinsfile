@@ -1,13 +1,4 @@
 pipeline {
-//     environment {
-//       QODANA_TOKEN=credentials('qodana-token')
-//     }
-//     agent {
-//         docker {
-//             args '-v "${WORKSPACE}":/data/project'
-//             image 'jetbrains/qodana-jvm-community'
-//         }
-//     }
    stages {
         stage('Run') {
            agent {
@@ -21,13 +12,5 @@ pipeline {
                sh "qodana --save-report${config.qodana_extra_args}"
            }
        }
-        stage('Qodana') {
-            steps {
-                sh '''
-                qodana \
-                --fail-threshold 10
-                '''
-            }
-        }
    }
 }
