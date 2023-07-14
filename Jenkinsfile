@@ -2,7 +2,7 @@ pipeline {
    agent {
       docker {
           label 'docker'
-          image "jetbrains/qodana-${config.qodana_linter}"
+          image "jetbrains/qodana-jvm-community"
           args " --entrypoint='' -v $HOME/.m2/:/root/.m2/  -v ${WORKSPACE}/qodana-reports:/data/results/ -v ${WORKSPACE}:/data/project/"
       }
    }
