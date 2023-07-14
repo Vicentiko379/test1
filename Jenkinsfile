@@ -7,8 +7,8 @@ pipeline {
    }
    stages {
        stage('Run') {
-           catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-               steps {
+           steps {
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                    sh "qodana --save-report"
                    echo "done!"
                }
