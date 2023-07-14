@@ -8,7 +8,7 @@ pipeline {
    stages {
        stage('Run') {
            steps {
-               bat(/"qodana --save-report")
+               sh "qodana --save-report"
                echo "done!"
            }
        }
