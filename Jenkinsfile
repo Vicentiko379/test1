@@ -5,7 +5,7 @@ pipeline {
                docker {
                    label 'docker'
                    image "jetbrains/qodana-${config.qodana_linter}"
-                   args " --entrypoint='' -v $HOME/.m2/:/root/.m2/  -v ${env.WORKSPACE}/qodana-reports:/data/results/ -v ${env.WORKSPACE}:/data/project/"
+                   args " --entrypoint='' -v $HOME/.m2/:/root/.m2/  -v ${WORKSPACE}/qodana-reports:/data/results/ -v ${WORKSPACE}:/data/project/"
                }
            }
            steps {
