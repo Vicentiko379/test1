@@ -1,18 +1,19 @@
 pipeline {
-   agent {
-      docker {
-          image "jetbrains/qodana-jvm-community"
-//           args ' --entrypoint="" -v "${WORKSPACE}"/qodana-reports:/data/results/ -v "${WORKSPACE}":/data/project/'
-      }
-   }
+   agent any
    stages {
-       stage('Run') {
-           steps {
-                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                   sh "qodana --save-report"
-                   echo "done!"
+       stage('Build Image') {
+            agent {
+               docker {
+                   image "jetbrains/qodana-jvm-community"
+         //           args ' --entrypoint="" -v "${WORKSPACE}"/qodana-reports:/data/results/ -v "${WORKSPACE}":/data/project/'
                }
-           }
+            }
+            steps {
+                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    sh "qodana --save-report"
+                    echo "done!"
+                }
+            }
        }
    }
 }
