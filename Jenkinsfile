@@ -3,7 +3,7 @@ pipeline {
       docker {
           label 'docker'
           image "jetbrains/qodana-jvm-community"
-          args " --entrypoint='' -v ${WORKSPACE}/.m2/:/root/.m2/  -v ${WORKSPACE}/qodana-reports:/data/results/ -v ${WORKSPACE}:/data/project/"
+          args " --entrypoint='' -v ${WORKSPACE}/qodana-reports:/data/results/ -v ${WORKSPACE}:/data/project/"
       }
    }
    stages {
