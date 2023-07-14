@@ -5,7 +5,7 @@ pipeline {
     agent {
         docker {
             args '''
-                -v "/ProgramData/Jenkins/.jenkins/workspace/pipeline docker/":/data/project
+                -v /ProgramData/Jenkins/.jenkins/workspace/pipeline docker/:/data/project
                 --entrypoint=""
                 '''
             image 'jetbrains/qodana-jvm-community'
