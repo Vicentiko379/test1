@@ -9,7 +9,7 @@ pipeline {
    stages {
        stage('Run') {
            steps {
-               sh "qodana --save-report${config.qodana_extra_args}"
+               sh "qodana --save-report"
            }
        }
    }
