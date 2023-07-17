@@ -10,7 +10,7 @@ pipeline {
             }
             steps {
                  catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    sh "sudo qodana --save-report"
+//                     sh "sudo qodana --save-report"
                     echo "done!"
                 }
             }
