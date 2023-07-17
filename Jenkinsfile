@@ -5,7 +5,7 @@ pipeline {
             agent {
                docker {
                    image "jetbrains/qodana-jvm-community"
-                   args 'sudo usermod -a -G docker jenkins --entrypoint="" -v "${WORKSPACE}"/qodana-reports:/data/results/ -v "${WORKSPACE}":/data/project/'
+                   args '-u administrator --entrypoint="" -v "${WORKSPACE}"/qodana-reports:/data/results/ -v "${WORKSPACE}":/data/project/'
                }
             }
             steps {
